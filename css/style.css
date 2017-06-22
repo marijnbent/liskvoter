@@ -1,0 +1,13 @@
+.row {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+
+}
+
+
+.error {
+    color: #FF0000;
+    display: block;
+    margin-top: 10px;
+}

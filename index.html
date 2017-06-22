@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lisk Voter</title>
+    <link type="text/css" rel="stylesheet" href="/liskvoter/css/style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css"
+          integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div id="address-login" class="row">
+        <form class="pure-form" method="post">
+            <label for="address-login-address">Lisk Address: </label>
+            <input type="text" id="address-login-address">
+            <span class="pure-form-message-inline">Example: 14965630837153474471L</span>
+
+            <input class="pure-button pure-button-primary" id="address-login-submit" type="submit">
+        </form>
+    </div>
+
+    <div id="votes-overview" class="row">
+        <script id="template-error" type="text/template">
+            <span class="error"><%= message %></span>
+        </script>
+        <script id="template-votes" type="text/template">
+            <h2>Your votes</h2>
+            <% _.each(delegates, function(delegate, index, list) { %>
+            <div class="delegate">
+                <span><%= delegate.get('address') %></span>
+                <span><%= delegate.get('approval') %></span>
+                <span><%= delegate.get('productivity') %></span>
+                <span><%= delegate.get('username') %></span>
+            </div>
+            <% }); %>
+        </script>
+    </div>
+
+    <div id="vote-fields" class="row">
+        <h2>Vote tool</h2>
+        <form class="pure-form pure-form-aligned" method="post">
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div class="pure-control-group">
+                        <label for="vote-fields-secret">Secret</label>
+                        <input type="text" id="vote-fields-secret">
+                        <span class="pure-form-message-inline">Example: trial silver distance people predict item journey harsh velvet happy absent tongue</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="vote-fields-second-secret">Second secret</label>
+                        <input type="text" id="vote-fields-second-secret">
+                        <span class="pure-form-message-inline">This is an optional field.</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="vote-fields-votes">Delegates</label>
+                        <textarea rows="15" id="vote-fields-votes"></textarea>
+                        <span class="pure-form-message-inline">Please enter one delegate per line.</span>
+                    </div>
+
+                    <label for="vote-fields-add-author" class="pure-checkbox">
+                        <input id="vote-fields-add-author" type="checkbox"> Add 'LiskFaucets' to your list (the author of
+                        this tool)
+                    </label>
+
+                    <div class="pure-control-group">
+                        <input class="pure-button pure-button-primary" type="submit">
+
+                        <span id="vote-fields-result"></span>
+                    </div>
+
+                </div>
+                <div class="pure-u-1-2">
+                    <div id="vote-fields-pools">
+                        <script id="template-pools" type="text/template">
+                            <div class="pure-control-group">
+                                <label for="pools">Pool</label>
+                                <select id="pools" class="pure-input-1-2">
+                                    <% _.each(pools, function(pool, index, list) { %>
+                                    <option value="<%= pool.get('delegates') %>"><%= pool.get('name') %></option>
+                                    <% }); %>
+                                </select>
+
+                                <button class="pure-button pure-button-secondary" id="add-pool">Add</button>
+
+
+                            </div>
+                        </script>
+
+                        <script id="template-pools-error" type="text/template">
+                            <span class="error"><%= message %></span>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/liskvoter/dist/bundle.js" type="text/javascript"></script>
+</body>
+</html>

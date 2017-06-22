@@ -1,0 +1,43 @@
+[
+    {
+        "name": "test pool 1",
+        "delegates": [
+            "cc001",
+            "vrlc92",
+            "isabella"
+        ]
+    },
+    {
+        "name": "test pool 2",
+        "delegates": [
+            "staticinstance",
+            "hoop",
+            "ntelo",
+            "metal494"
+        ]
+    },
+    {
+        "name": "test pool 3",
+        "delegates": [
+            "slasheks",
+            "phoenix1969",
+            "splatters",
+            "devasive"
+        ]
+    },
+    {
+        "name": "test pool 4",
+        "delegates": [
+            "gr33ndrag0n",
+            "samuray",
+            "mrv"
+        ]
+    },
+    {
+        "name": "test pool 5",
+        "delegates": [
+            "liskgate",
+            "carolina"
+        ]
+    }
+]
