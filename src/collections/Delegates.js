@@ -10,7 +10,7 @@ const DelegatesApiCall = '/api/accounts/delegates?address=';
 
 const Delegates = Collection.extend({
     model: Delegate,
-    baseUrl: 'http://45.76.35.175:7000' + DelegatesApiCall,
+    baseUrl: 'https://testnet.lisk.io' + DelegatesApiCall,
     parse: function(response){
         return response.delegates;
     },

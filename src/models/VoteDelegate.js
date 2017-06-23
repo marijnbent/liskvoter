@@ -9,7 +9,7 @@ const DelegateApiCall = '/api/delegates/get?username=';
 
 const Delegate = Model.extend({
     url: function() {
-        return 'http://45.76.35.175:7000' + DelegateApiCall + this.id;
+        return 'https://testnet.lisk.io' + DelegateApiCall + this.id;
     },
     parse: function(response){
         return response.delegate;

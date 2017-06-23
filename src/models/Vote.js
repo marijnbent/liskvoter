@@ -10,7 +10,9 @@ const Vote = Model.extend({
     hasSecondSecret: false,
     secondSecret: '',
     delegates: [],
-    url: 'http://45.76.35.175:7000/api/accounts/delegates',
+    url: 'https://testnet.lisk.io/api/accounts/delegates',
+
+    //Use PUT instead of POST
     isNew: function() {
         return false;
     }
